@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>上海钓鱼助手 · MVP</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🎣 上海钓鱼助手 <span class="tag">MVP</span></h1>
+    <nav>
+      <button class="tab active" data-tab="score">出钓指数</button>
+      <button class="tab" data-tab="tide">潮汐水文</button>
+      <button class="tab" data-tab="spots">钓点地图</button>
+      <button class="tab" data-tab="log">钓鱼日志</button>
+      <button class="tab" data-tab="gear">装备清单</button>
+      <button class="tab" data-tab="compliance">合规速查</button>
+    </nav>
+  </header>
+
+  <div id="error-banner" class="error-banner hidden"></div>
+  <div id="alert-banner" class="alert-banner hidden"></div>
+
+  <main>
+    <!-- ======== 出钓指数 ======== -->
+    <section id="tab-score" class="tab-panel active">
+      <div class="toolbar">
+        <label>查询地点：
+          <select id="loc-select"></select>
+        </label>
+        <span id="generated-at" class="muted"></span>
+      </div>
+
+      <div id="score-summary" class="summary-grid">
+        <div class="card score-card">
+          <div class="score-ring" id="score-ring">
+            <div class="score-num" id="score-num">--</div>
+            <div class="score-unit">分</div>
+          </div>
+          <div class="score-meta">
+            <div id="score-verdict" class="verdict">加载中…</div>
+            <div id="day-summary" class="muted small"></div>
+            <div id="moon-info" class="muted small"></div>
+            <div id="score-now-detail" class="muted"></div>
+          </div>
+        </div>
+        <div class="card windows-card">
+          <h3>未来 48 小时最佳窗口</h3>
+          <div id="best-windows" class="windows"><div class="muted">加载中…</div></div>
+        </div>
+      </div>
+
+      <div id="tide-hint" class="card hidden"></div>
+
+      <div class="card">
+        <h3>逐小时评分（48h · 规则透明可解释）</h3>
+        <div class="chart-wrap"><canvas id="score-chart"></canvas></div>
+        <p class="muted small">
+          评分构成：<b>气压趋势 25</b> + <b>气压绝对值 20</b> + <b>风 20</b> + <b>季节时段 15</b> +
+          <b>降水 10</b> + <b>温差湿度 10</b>；
+          硬门槛一票否决：6 级以上大风 / 7 级以上阵风 / 强降雨 ≥8mm/h（规则见
+          <code>docs/03-天气监控调研.md</code>，后续用渔获日志回填校准）。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>未来 24 小时明细</h3>
+        <div class="table-wrap">
+          <table id="hourly-table">
+            <thead>
+              <tr><th>时间</th><th>评分</th><th>结论</th><th>风</th><th>气压(24h)</th><th>雨量</th><th>气温</th><th>主要原因</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== 潮汐水文 ======== -->
+    <section id="tab-tide" class="tab-panel">
+      <div class="toolbar">
+        <label>潮汐站：
+          <select id="tide-station"></select>
+        </label>
+        <span class="muted small">黄浦江沿线钓点用 吴淞/黄浦公园/吴泾，长江口用 长兴/横沙/中浚，杭州湾北岸用 芦潮港</span>
+        <span id="tide-updated" class="muted"></span>
+      </div>
+
+      <div class="summary-grid">
+        <div class="card">
+          <h3>当前阶段</h3>
+          <div id="tide-current" class="tide-current">加载中…</div>
+        </div>
+        <div class="card">
+          <h3>转流提醒（黄金窗口）</h3>
+          <div id="tide-next-turn" class="muted">加载中…</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>48 小时潮汐曲线与钓况阶段</h3>
+        <div class="chart-wrap"><canvas id="tide-chart"></canvas></div>
+        <p class="muted small">
+          阶段语义（<code>docs/02-水文监控调研.md</code>）：涨潮好钓 →
+          <b>平潮</b>停口（高潮/低潮前 40 分钟 ~ 后 30 分钟）→
+          <b>转流初期</b>黄金窗口（2.5 小时）→ 落潮次之。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>高低潮时刻表</h3>
+        <div id="tide-stands" class="stands-grid">加载中…</div>
+      </div>
+
+      <div class="card">
+        <h3>市水务局 · 实时水位与预报高潮</h3>
+        <div id="waterlevel" class="waterlevel-grid">加载中…</div>
+      </div>
+    </section>
+
+    <!-- ======== 钓点地图 ======== -->
+    <section id="tab-spots" class="tab-panel">
+      <div class="toolbar">
+        <div id="district-chips" class="chips"></div>
+      </div>
+      <div class="spots-layout">
+        <div id="map"></div>
+        <div id="spot-list" class="spot-list"></div>
+      </div>
+      <div id="spot-detail" class="card hidden"></div>
+    </section>
+
+    <!-- ======== 钓鱼日志 ======== -->
+    <section id="tab-log" class="tab-panel">
+      <div class="card">
+        <h3>记一笔出钓</h3>
+        <form id="log-form" class="log-form">
+          <label>日期 <input type="date" id="log-date" required /></label>
+          <label>钓点 <select id="log-spot"></select></label>
+          <label>开始 <input type="time" id="log-start" /></label>
+          <label>结束 <input type="time" id="log-end" /></label>
+          <label>满意度
+            <select id="log-rating">
+              <option value="5">5 · 爆护</option>
+              <option value="4" selected>4 · 过瘾</option>
+              <option value="3">3 · 一般</option>
+              <option value="2">2 · 龟了</option>
+              <option value="1">1 · 空军</option>
+            </select>
+          </label>
+          <label>饵料 <input type="text" id="log-bait" placeholder="老三样 / 蚯蚓 / …" /></label>
+          <label class="full">渔获明细 <input type="text" id="log-fish" placeholder="如：鲫鱼x12、鲤鱼1、白条若干" /></label>
+          <label class="full">备注 <input type="text" id="log-notes" placeholder="钓位、水情、口况…" /></label>
+          <input type="hidden" id="log-score" />
+          <input type="hidden" id="log-weather" />
+          <div class="full log-actions">
+            <button type="button" id="log-snapshot">📥 填入当前天气/评分快照</button>
+            <button type="submit">保存记录</button>
+          </div>
+        </form>
+      </div>
+      <div id="log-stats" class="stats-grid"></div>
+      <div class="card">
+        <h3>出钓记录</h3>
+        <div class="table-wrap">
+          <table id="log-table">
+            <thead><tr><th>日期</th><th>钓点</th><th>时段</th><th>出钓指数</th><th>天气快照</th><th>渔获</th><th>饵料</th><th>满意度</th><th></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== 装备清单 ======== -->
+    <section id="tab-gear" class="tab-panel">
+      <div class="card">
+        <h3>第一次出钓购物清单 <span class="muted small">（勾选已购，进度保存在本机）</span></h3>
+        <div id="gear-progress" class="gear-progress"></div>
+        <div id="gear-list" class="gear-list"></div>
+      </div>
+      <div class="card">
+        <h3>三档起步预算方案</h3>
+        <div id="gear-tiers" class="tiers-grid"></div>
+      </div>
+      <div class="card">
+        <h3>老三样开饵速查</h3>
+        <div id="gear-bait"></div>
+      </div>
+    </section>
+
+    <!-- ======== 合规速查 ======== -->
+    <section id="tab-compliance" class="tab-panel">
+      <div class="card">
+        <h3>合规红线速查卡</h3>
+        <p class="muted small">整理自上海市农业农村委通告、新《渔业法》（2026-05-01 施行）及权威媒体报道，点击"来源"查看原文。执行口径以属地最新通告为准，可拨 <b>021-12316</b> 核实。</p>
+        <div class="table-wrap">
+          <table id="compliance-table">
+            <thead><tr><th>类别</th><th>事项</th><th>规则</th><th>来源</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    天气数据 <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> ·
+    潮汐：上海海事局 · 水位/防汛：上海市水务局 · 预警：上海市预警发布中心 · 法规整理自官方公告 ·
+    钓点为 2026-10 调研快照，出发前请二次验证 · 下一阶段：出钓指数权重随日志自学习、硬件线（声呐探鱼器验证）
+  </footer>
+
+  <script src="/static/app.js?v=7"></script>
+</body>
+</html>

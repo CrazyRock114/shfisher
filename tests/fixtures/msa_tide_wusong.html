@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>潮汐查询</title>
+    <meta name="csrf-param" content="_csrf-frontend">
+    <meta name="csrf-token" content="a78ELcfH0s4r6A8-T9ETlN9OMDDIzRb63eRYRsHeRBY-7mxhl4yLgUa7VWQOt3TZhQ1IHbqKUciwpjEAlZc3JQ==">
+
+<link href="/shhsfb/assets/53090517/css/bootstrap.css" rel="stylesheet">
+<link href="/shhsfb/css/site.css" rel="stylesheet">
+<link href="/shhsfb/css/weui.min.css" rel="stylesheet">
+<script src="/shhsfb/assets/6b40ade1/jquery.js"></script>
+<script src="/shhsfb/assets/e1621385/yii.js"></script>
+<script src="/shhsfb/js/addRecord.js?a=127"></script>
+<script src="/shhsfb/js/imgResize.js"></script>
+<script src="/shhsfb/js/weui.min.js"></script>    <link rel="stylesheet" type="text/css" href="/shhsfb/css/menu.css?v=3" />
+</head>
+<body>
+
+<div class="wrap" style="padding-bottom: 0">
+    <div class="container" style="padding-top: 0; padding-left: 0; padding-bottom: 0">
+		<body style="background: #EDEDED;">
+<div id="tide-block">
+    <div class="mybg" style="width:100%;border-radius: 0px;border-top:0;">
+        <form>
+            <div class="weui-cell" style="padding:0px;">
+                <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <img src="/shhsfb/img/marine/msg_tide.png" style="display: block;width:50px;height:50px;">
+                </div>
+                <div class="weui-cell__bd">
+                                                                                                                    <div style="display: flex">
+                                <a href="javascript:;" id="showPicker" class="showPicker" style="display:block;line-height:25px;height:25px;padding-left:2px;padding-top:2px;">
+                                    吴淞                                </a>
+                                <i class="arrows" id="showPicker2"  style="margin-left:5px;"></i>
+                                <input type="hidden" id="PlaceId" name="PlaceId"value="1">
+                            </div>
+                            
+                       
+                    <div style="padding-top:5px">
+                        <div style="display: flex;">
+                            <a href="javascript:;" id="showDatePicker" class="ShowDatePicker" style="line-height:25px;height:25px;padding-left:2px;padding-top:2px;">
+                                2026-10-02                            </a>
+                            <i class="arrows" id="showDatePicker2"  style="margin-left:5px;"></i>
+                            <input type="hidden" id="TideDate" name="TideDate" value="2026-10-02">
+                        </div>
+                    </div>
+                </div>
+                <input type="image" src="/shhsfb/img/icon/search.png" class="search-btn"/>
+            </div>
+        </form>
+    </div>
+            <div class="mybg" style="padding:0;border:0">
+            <table class="table table-bordered" style="margin-bottom:0px">
+                <tr>
+                    <td>潮时(Hrs)</td>
+                    <td>03:18</td>                    <td>10:50</td>                    <td>15:47</td>                                    </tr>
+                <tr style="background: #f4f4f4">
+                    <td>潮高(cm)</td>
+                    <td>337</td>                    <td>128</td>                    <td>390</td>                                    </tr>
+            </table>
+        </div>
+        <div class="mybg" style="padding:0;">
+            <div class="chart">
+                <div id="lineChart" style="height: 18em; width: 100%;"></div>
+            </div>
+        </div>
+        <div class="mybg" style="padding:0;margin-bottom:0px;padding-top:10px;border-bottom:0">
+            <div class="tidedatatitle" style=""><b>吴淞 2026-10-02 潮汐表</b></div>
+            <table cellpadding="0" class="table table-bordered" style="text-align: center;margin-bottom:0px;">
+                <tr>
+                    <td width="20%">潮时</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr style="background: #EDEDED">
+                    <td width="20%">潮高</td>
+                    <td>144</td>
+                    <td>233</td>
+                    <td>305</td>
+                    <td>335</td>
+                    <td>328</td>
+                    <td>293</td>
+                </tr>
+
+                <tr>
+                    <td width="20%">潮时</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                </tr>
+                <tr style="background: #f4f4f4">
+                    <td width="20%">潮高</td>
+                    <td>235</td>
+                    <td>192</td>
+                    <td>162</td>
+                    <td>149</td>
+                    <td>135</td>
+                    <td>129</td>
+                </tr>
+
+                <tr>
+                    <td width="20%">潮时</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                </tr>
+                <tr style="background: #f4f4f4">
+                    <td width="20%">潮高</td>
+                    <td>148</td>
+                    <td>240</td>
+                    <td>342</td>
+                    <td>382</td>
+                    <td>389</td>
+                    <td>370</td>
+                </tr>
+
+                <tr>
+                    <td width="20%">潮时</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                </tr>
+                <tr style="background: #f4f4f4;">
+                    <td width="20%">潮高</td>
+                    <td>321</td>
+                    <td>270</td>
+                    <td>232</td>
+                    <td>196</td>
+                    <td>175</td>
+                    <td>157</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<style type="text/css">
+    .mybg{
+        padding: 10px;
+        margin-bottom:8px;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        background: white;
+        font-family: "Noto Sans CJK SC", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", Tahoma, sans-serif, SimHei, Simsun !important;
+    }
+    .tidedatatitle{
+        font-size:18px;
+        text-align:center;
+        padding-bottom: 20px;
+    }
+    #showPicker, #showDatePicker{
+        text-decoration:none;
+    }
+    .arrows {
+        display:inline-block;
+        width:25px;
+        height:25px;
+        background-image: url("/shhsfb/img/icon/arrows.png");
+        background-position: center center;
+        background-size: 15px 15px;
+        background-repeat:no-repeat;
+    }
+</style>
+
+<script type="text/javascript" src="/shhsfb/js/echarts/echarts.js"></script>
+<script type="text/javascript" src="/shhsfb/js/xfcy/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var lineChart = document.getElementById('lineChart');
+    if (lineChart != null){
+        var myChart = echarts.init(lineChart);
+        var xLabel = '[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]';
+        var xData = '[144,233,305,335,328,293,235,192,162,149,135,129,148,240,342,382,389,370,321,270,232,196,175,157]';
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                padding: [20,10,20,10],
+                text: '吴淞 2026-10-02 潮汐曲线图',
+                x: 'center',
+            },
+            grid: {
+                left: '15%',
+                bottom: '10%'
+            },
+            tooltip: {
+                formatter: function (param) {
+                    return param.seriesName + "<br>" + param.name + " " + param.value + "cm";
+                }
+            },
+            legend: {
+                show: false,
+                data: [{name: '吴淞'}]
+            },
+            xAxis: {
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: ['#C2C2C2'],
+                        width: 1,
+                        type: 'solid'
+                    }
+                },
+                boundaryGap: false,
+                data: JSON.parse(xLabel),
+                axisLabel: {
+                    interval: 1,
+                }
+            },
+            yAxis: {
+                scale: true,
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: ['#C2C2C2'],
+                        width: 1,
+                        type: 'solid'
+                    }
+                },
+            },
+            series: [{
+                name: '吴淞',
+                type: 'line',
+                symbolSize: 8,
+                color: ['#4572A7'],
+                symbol: 'circle',
+                smooth: true,
+                data: JSON.parse(xData)
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+    $('#showPicker').on('click', function () {
+        showPort();
+    });
+
+    $('#showPicker2').on('click', function () {
+        showPort();
+    });
+    
+    function showPort(){
+        weui.picker([
+            {label: '吴淞', value: 1},
+            {label: '高桥', value: 2},
+            {label: '黄浦公园', value: 3},
+            {label: '吴泾', value: 4},
+            {label: '青龙港', value: 5},
+            {label: '白茆', value: 6},
+            {label: '天生港', value: 7},
+            {label: '江阴', value: 8},
+            {label: '石洞口', value: 9},
+            {label: '南门港', value: 10},
+            {label: '长兴', value: 11},
+            {label: '横沙', value: 12},
+            {label: '中浚', value: 13},
+            {label: '北槽中', value: 14},
+            {label: '牛皮礁', value: 15},
+            {label: '佘山', value: 16},
+            {label: '鸡骨礁', value: 17},
+            {label: '南槽东', value: 18},
+            {label: '大戢山', value: 19},
+            {label: '绿华', value: 20},
+            {label: '芦潮港', value: 21}], {
+            defaultValue: [1],
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                $("#showPicker").text(result[0]["label"]);
+                $("#PlaceId").val(result[0]["value"]);
+            }
+        });
+    }
+    
+    $('#showDatePicker').on('click', function () {
+        showDate();
+    });
+    
+    $('#showDatePicker2').on('click', function () {
+        showDate();
+    });
+    
+    function showDate(){
+        weui.datePicker({
+            start: 1990,
+            end: new Date().getFullYear(),
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+                var selDate = result[0]["value"] + "-" + result[1]["value"] + "-" + result[2]["value"];
+                $(".ShowDatePicker").text(selDate);
+                $("#TideDate").val(selDate);
+            }
+        });
+    }
+</script>
+    </div>
+</div>
+
+
+</body>
+</html>

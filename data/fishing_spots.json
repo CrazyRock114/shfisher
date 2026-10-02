@@ -1,0 +1,1002 @@
+{
+  "$schema": "钓点种子数据 v0.4（2026-10-02 调研 + 同日增补：张家浜专题、苏州河官方点位明细、各区钓友分享点，出发前需二次验证）。lat/lon 为概略坐标（误差数百米级），仅用于天气查询与地图定位，到达后以现场为准。 新增 tidal 字段：true=感潮点位（看潮出钓），false=闸控/内陆水域。",
+  "fields": {
+    "id": "唯一标识",
+    "name": "钓点名称",
+    "district": "行政区",
+    "water_body": "所属水体",
+    "type": "official_spots=官方垂钓点 / river=河道野钓 / lake=湖荡 / paid=收费钓场 / sea=海钓 / warning=禁钓警示",
+    "fish_species": "主要对象鱼",
+    "fee": "费用（0=免费）",
+    "compliance": "合规要点",
+    "confidence": "verified=有官方来源 / community=钓友经验 / unverified=待验证（多为早年老帖或信息可疑）",
+    "lat": "概略纬度",
+    "lon": "概略经度",
+    "sources": [
+      "信息来源URL"
+    ]
+  },
+  "spots": [
+    {
+      "id": "sh-pd-bailianjing",
+      "name": "白莲泾公园垂钓点（虹月桥以南/长津桥以南）",
+      "district": "浦东新区",
+      "water_body": "黄浦江",
+      "type": "official_spots",
+      "fish_species": [
+        "鲫鱼",
+        "黄颡鱼",
+        "鲈鱼",
+        "花鲢"
+      ],
+      "fee": 0,
+      "compliance": "官方设置垂钓点，全天开放，有'可以垂钓'标识；周末需抢位",
+      "confidence": "verified",
+      "lat": 31.207,
+      "lon": 121.503,
+      "sources": [
+        "https://mzj.sh.gov.cn/lnb-xw/20230323/0e4436f39f94461d85acc1a08df6ca70.html",
+        "https://news.xinmin.cn/2023/03/29/32348713.html"
+      ],
+      "tidal": true
+    },
+    {
+      "id": "sh-pt-suzhouhe",
+      "name": "苏州河普陀段官方垂钓点（7 处，均已装指示牌）",
+      "district": "普陀区",
+      "water_body": "苏州河",
+      "type": "official_spots",
+      "fish_species": [
+        "鲫鱼",
+        "白条",
+        "鲤鱼"
+      ],
+      "fee": 0,
+      "compliance": "区《苏州河岸线管理办法》设定：长征镇2处（海螺公园平台、河滨香景园52号楼对面平台）、长风新村街道3处（半马苏河3号公园兴达国际对面、半马苏河1号公园长风壹号绿地东侧、水岸豪庭26号楼对面）、长寿路街道北岸2处（新湖明珠城一期东北门对面、宝成桥以东约50米）；细则：只用钓竿、除蚯蚓外禁活饵；涨潮走水、船波大时口差",
+      "confidence": "verified",
+      "lat": 31.222,
+      "lon": 121.393,
+      "sources": [
+        "https://www.shobserver.com/wx/detail.do?id=902394",
+        "https://www.163.com/dy/article/J0KQ2A370514A42S.html",
+        "https://www.163.com/dy/article/KOV9SBAJ0514A42S.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-js-wuzhenluqiao",
+      "name": "乌镇路桥东侧苏州河北岸亲水平台",
+      "district": "静安区",
+      "water_body": "苏州河",
+      "type": "official_spots",
+      "fish_species": [
+        "鲫鱼",
+        "白条"
+      ],
+      "fee": 0,
+      "compliance": "2024 年记者实地走访确认设有垂钓标识；遵守'一人一杆一线一钩'",
+      "confidence": "verified",
+      "lat": 31.245,
+      "lon": 121.462,
+      "sources": [
+        "https://www.163.com/dy/article/J0KQ2A370514A42S.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-tangqiao-park",
+      "name": "张家浜·塘桥公园段（东方路×峨山路）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "黑鱼",
+        "餐条"
+      ],
+      "fee": 0,
+      "compliance": "老牌野钓点，公园段水面开阔有亲水平台；公园管理方对垂钓不友好属灰色段，现场确认无禁钓牌再下竿",
+      "confidence": "community",
+      "lat": 31.217,
+      "lon": 121.528,
+      "sources": [
+        "http://form.baidu.com/view/cdc81a5aad02de80d4d84088.html",
+        "https://bbs.bixishang.com/i/archiver/c/25/57084.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-lujiazui-west",
+      "name": "张家浜·陆家嘴水环西段（浦东南路桥—南泉路—东方路桥）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "餐条",
+        "鲤鱼"
+      ],
+      "fee": 0,
+      "compliance": "2024 年贯通滨水步道段，桥墩驳岸结构多、钓位选择多；水深约 2-3 米；避开步道人流",
+      "confidence": "community",
+      "lat": 31.21,
+      "lon": 121.523,
+      "sources": [
+        "https://www.bilibili.com/video/BV18G411n7B6"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-kejiguan",
+      "name": "张家浜·上海科技馆段（世纪大道 2000 号北侧）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "餐条"
+      ],
+      "fee": 0,
+      "compliance": "老钓友口口相传点，台钓友好；沿河步道，避开跑步高峰",
+      "confidence": "community",
+      "lat": 31.213,
+      "lon": 121.535,
+      "sources": [
+        "https://zhidao.baidu.com/question/112851926.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "warning-zjb-shijigongyuan",
+      "name": "⚠ 张家浜·世纪公园园内段（禁钓）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "warning",
+      "fish_species": [],
+      "fee": 0,
+      "compliance": "园方明确'公园规定不能钓鱼'，两岸装有防下水护栏，偷钓会被制止；园内另有付费垂钓项目（门票+30元/竿）属园内池塘与河道无关",
+      "confidence": "verified",
+      "lat": 31.212,
+      "lon": 121.552,
+      "sources": [
+        "https://news.qq.com/rain/a/20230928A025R100",
+        "https://www.163.com/dy/article/IFOFR64I055040N.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-yunshanlu",
+      "name": "张家浜·张家浜路×云山路口（金桥/洋泾片区）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "鳊鱼",
+        "黄颡鱼",
+        "翘嘴"
+      ],
+      "fee": 0,
+      "compliance": "钓鱼之家正式收录钓点（8 条评论），鱼种信息最全；绿道旁下竿避开步道",
+      "confidence": "community",
+      "lat": 31.23,
+      "lon": 121.587,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/72009.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-shuiwuqiao",
+      "name": "张家浜·洋泾港交汇段（水舞桥下及两侧）",
+      "district": "浦东新区",
+      "water_body": "张家浜/洋泾港",
+      "type": "river",
+      "fish_species": [
+        "翘嘴",
+        "白条",
+        "鲫鱼"
+      ],
+      "fee": 0,
+      "compliance": "两河交汇+桥墩+水舞桥下深潭结构，典型路亚标点，有路亚上翘嘴记录",
+      "confidence": "community",
+      "lat": 31.233,
+      "lon": 121.581,
+      "sources": [
+        "https://bbs.bixishang.com/i/archiver/c/25/63035.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-zhangjiang",
+      "name": "张家浜·张江段（金科路—广兰路沿河）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "餐条"
+      ],
+      "fee": 0,
+      "compliance": "锦延路一带滨水环境成熟、停车方便，水深约 2 米；缺渔获佐证，待实地验证",
+      "confidence": "community",
+      "lat": 31.205,
+      "lon": 121.593,
+      "sources": [],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-sunqiao",
+      "name": "张家浜·孙桥段（华夏西路以南）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "river",
+      "fish_species": [
+        "鲤鱼",
+        "鲫鱼",
+        "翘嘴"
+      ],
+      "fee": 0,
+      "compliance": "沿岸农田段驳岸自然有芦苇区，老帖提及有人用海竿守大物；年代久远待验证",
+      "confidence": "unverified",
+      "lat": 31.196,
+      "lon": 121.608,
+      "sources": [],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zjb-heqing",
+      "name": "张家浜·合庆段（向阳北路沿河—东闸）",
+      "district": "浦东新区",
+      "water_body": "张家浜",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "餐条"
+      ],
+      "fee": 0,
+      "compliance": "人少、北岸徒步道贯通路边可停；闸控河道，出鱼依赖引排水'放水窗口'；⚠东闸以东即长江口禁捕管理区方向，严禁多钩多杆，闸口附近不建议作钓",
+      "confidence": "community",
+      "lat": 31.259,
+      "lon": 121.698,
+      "sources": [
+        "https://gs.ctrip.com/html5/you/travels/2099905/4034030.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-yangjinggang-sanbahe",
+      "name": "洋泾港·三八河片区（祖冲之路×罗山路口）",
+      "district": "浦东新区",
+      "water_body": "洋泾港/三八河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "鲢鳙"
+      ],
+      "fee": 0,
+      "compliance": "钓友称'大鲫鱼很多，半斤以上'但口慢、走水；部分段施工致水脏；停车难（可停碧波路步行约10分钟）",
+      "confidence": "community",
+      "lat": 31.227,
+      "lon": 121.617,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/86652.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-zhaojiagou",
+      "name": "赵家沟（高建北路×俱进路口）",
+      "district": "浦东新区",
+      "water_body": "赵家沟",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼"
+      ],
+      "fee": 0,
+      "compliance": "翻板老手称'藏巨物'，但水广鱼稀、近工业区水有污染，且有电工出没史，出钓选白天热门时段",
+      "confidence": "community",
+      "lat": 31.262,
+      "lon": 121.665,
+      "sources": [
+        "https://m.diaoyu.com/showtopic-2326295-1-1.html",
+        "http://www.turnfishing.com/aspbbs/dispbbs.asp?boardid=79&Id=27789"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-pudongyunhe-gaoqiao",
+      "name": "浦东运河（高桥段·杨高北路）",
+      "district": "浦东新区",
+      "water_body": "浦东运河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "餐条"
+      ],
+      "fee": 0,
+      "compliance": "运河桥下鱼较多；注意船波，夜钓结伴",
+      "confidence": "community",
+      "lat": 31.345,
+      "lon": 121.585,
+      "sources": [
+        "https://m.diaoyu.com/showtopic-5880063-1-1.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-dishuihu-zhiliu",
+      "name": "临港滴水湖支流（人民路×民生北路附近）",
+      "district": "浦东新区",
+      "water_body": "滴水湖支流",
+      "type": "river",
+      "fish_species": [
+        "鳊鱼",
+        "鲫鱼",
+        "鲤鱼",
+        "翘嘴"
+      ],
+      "fee": 0,
+      "compliance": "水面10余亩、水深2米多，2025年底钓友'钓到45厘米大鳊鱼，资源不错'",
+      "confidence": "community",
+      "lat": 30.882,
+      "lon": 121.926,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/243415.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-dishuihu-huanhu",
+      "name": "滴水湖（环湖指定垂钓区）",
+      "district": "浦东新区",
+      "water_body": "滴水湖",
+      "type": "lake",
+      "fish_species": [
+        "翘嘴",
+        "鲈鱼",
+        "鲫鱼"
+      ],
+      "fee": 0,
+      "compliance": "临港管委会管理：仅允许'一人一杆一线一钩'休闲垂钓，具体可钓区以临港公告及现场标识为准（《滴水湖水域保护和管理规定》）",
+      "confidence": "verified",
+      "lat": 30.891,
+      "lon": 121.933,
+      "sources": [
+        "https://nyncw.sh.gov.cn/zxfk/20230925/914fcae935794bfeaaaacb5d184654d4.html",
+        "http://static.zhoudaosh.com/files/cnews/2022/20220815/75F7EE5B1E7857730F3F1FBC1303265ACBD534AB893FAB761F9B781ED4A1C257/2.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-weichanghe",
+      "name": "浦东机场围场河（机场镇镇北路向东）",
+      "district": "浦东新区",
+      "water_body": "围场河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "鳊鱼",
+        "白条"
+      ],
+      "fee": 0,
+      "compliance": "鲫 2-3 两、偶大板鲫，无垂钓设施；2017 年老帖，待验证；机场周边注意禁飞与管制区标识",
+      "confidence": "unverified",
+      "lat": 31.16,
+      "lon": 121.73,
+      "sources": [
+        "https://k.sina.cn/article_5980650186_164797aca001001abm.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-pd-jungang-gonglu",
+      "name": "东海镇军港公路河边（祝桥）",
+      "district": "浦东新区",
+      "water_body": "通海河道",
+      "type": "river",
+      "fish_species": [
+        "鲤鱼",
+        "鲫鱼",
+        "翘嘴"
+      ],
+      "fee": 0,
+      "compliance": "老帖称'此条大河通东海'、大鲤常跃、节假日数百人作钓；年代久远待验证；近海口注意咸潮与禁捕区边界",
+      "confidence": "unverified",
+      "lat": 31.0,
+      "lon": 121.77,
+      "sources": [
+        "https://k.sina.cn/article_5980650186_164797aca001001abm.html"
+      ],
+      "tidal": true
+    },
+    {
+      "id": "sh-pd-chuanyanghe",
+      "name": "川杨河（沪南路五星路口段）",
+      "district": "浦东新区",
+      "water_body": "川杨河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "鳊鱼",
+        "黑鱼",
+        "鲶鱼"
+      ],
+      "fee": 0,
+      "compliance": "一人一杆一线一钩；禁渔期(2.16-5.16)不用生产性渔具",
+      "confidence": "community",
+      "lat": 31.19,
+      "lon": 121.55,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/116033.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-mh-dazhihe",
+      "name": "大治河（浦江镇正义村段出水口）",
+      "district": "闵行区/浦东新区界",
+      "water_body": "大治河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "鳊鱼"
+      ],
+      "fee": 0,
+      "compliance": "出水口溶氧高、轻微走水适合双铅钓法；禁渔期外鱼情更稳",
+      "confidence": "community",
+      "lat": 31.02,
+      "lon": 121.53,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/98420.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-mh-xiaolaigang",
+      "name": "小涞港水闸段（疏影路 1277 号附近）",
+      "district": "闵行区",
+      "water_body": "小涞港",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "白条"
+      ],
+      "fee": 0,
+      "compliance": "2017 年老帖待验证；近虹桥商务区，水情受闸控",
+      "confidence": "unverified",
+      "lat": 31.132,
+      "lon": 121.352,
+      "sources": [
+        "https://kknews.cc/zh-sg/news/3x3om93.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-mh-xinzhuang-lake",
+      "name": "莘庄商务区人工湖（秀波路×秀涟路）",
+      "district": "闵行区",
+      "water_body": "莘庄商务区水面",
+      "type": "lake",
+      "fish_species": [
+        "鲫鱼",
+        "白条"
+      ],
+      "fee": 0,
+      "compliance": "2017 年老帖待验证；商务区湖面以现场管理规定为准",
+      "confidence": "unverified",
+      "lat": 31.127,
+      "lon": 121.381,
+      "sources": [
+        "https://kknews.cc/zh-sg/news/3x3om93.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-mh-sanyouhe",
+      "name": "三友河（立跃路×三鲁公路口向西 300 米）",
+      "district": "闵行区",
+      "water_body": "三友河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "白条"
+      ],
+      "fee": 0,
+      "compliance": "2017 年老帖待验证",
+      "confidence": "unverified",
+      "lat": 31.095,
+      "lon": 121.512,
+      "sources": [
+        "https://kknews.cc/zh-sg/news/3x3om93.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-bs-meilanhu-paid",
+      "name": "美兰湖钓场（收费）+ 年吉路浅滩（免费）",
+      "district": "宝山区",
+      "water_body": "美兰湖",
+      "type": "paid",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼"
+      ],
+      "fee": "钓场约 80 元/天；周边免费野滩适合亲子练手",
+      "compliance": "收费塘按场方规则；野滩遵守通用红线",
+      "confidence": "community",
+      "lat": 31.395,
+      "lon": 121.335,
+      "sources": [
+        "https://post.m.smzdm.com/p/a4qe8358"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-bs-dijing-luodian",
+      "name": "荻泾河（罗店·美兰湖大道×罗迎路口南 200 米）",
+      "district": "宝山区",
+      "water_body": "荻泾河",
+      "type": "river",
+      "fish_species": [
+        "白条",
+        "鲫鱼"
+      ],
+      "fee": 0,
+      "compliance": "免费江河型钓点；口碑需泼冷水：'河水干净鱼不行，全是小白条'、重窝 3 小时没口——出钓预期放低",
+      "confidence": "community",
+      "lat": 31.398,
+      "lon": 121.34,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/74774.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-jd-wenzaobang-xianfeng",
+      "name": "蕰藻浜（嘉松北路×先锋路桥下）",
+      "district": "嘉定区",
+      "water_body": "蕰藻浜",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "翘嘴"
+      ],
+      "fee": 0,
+      "compliance": "热门点、水深适中；⚠货运航道走水急、船波大，务必注意安全并避开货船时段",
+      "confidence": "community",
+      "lat": 31.299,
+      "lon": 121.237,
+      "sources": [
+        "https://post.smzdm.com/p/aqr34622/",
+        "https://m.diaoyu.com/diaochang/shanghai/list-310114-4-1-1.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-jd-loutang-qushuikou",
+      "name": "娄塘河取水口段（练祁河—横沥河水系）",
+      "district": "嘉定区",
+      "water_body": "娄塘河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "鳊鱼"
+      ],
+      "fee": 0,
+      "compliance": "翻板老手：'靠着取水口较深且有流动，常年聚鱼；缺点是底下环境复杂，2 轮抛竿损失钩组 4 副'；⚠取水口属水源保护敏感区，垂钓前确认无禁令",
+      "confidence": "community",
+      "lat": 31.378,
+      "lon": 121.248,
+      "sources": [
+        "http://www.turnfishing.com/aspbbs/dispbbs.asp?boardid=79&Id=27789"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-song-miaogang-zhongnanlu",
+      "name": "黄浦江泖港段·中南路东侧",
+      "district": "松江区",
+      "water_body": "黄浦江",
+      "type": "river",
+      "fish_species": [
+        "鲤鱼",
+        "鳊鱼",
+        "鲫鱼"
+      ],
+      "fee": 0,
+      "compliance": "江面开阔走水急，2018 年实测帖作者单日 2 鲤 1 鳊共 18 斤；'野钓渔获全看运气'；注意船波与安全",
+      "confidence": "community",
+      "lat": 30.982,
+      "lon": 121.234,
+      "sources": [
+        "https://www.sohu.com/a/245836888_650035"
+      ],
+      "tidal": true
+    },
+    {
+      "id": "sh-song-chenta-luchen",
+      "name": "辰塔路×泖晨路（石湖荡）",
+      "district": "松江区",
+      "water_body": "黄浦江支流/泖晨路沿线河道",
+      "type": "river",
+      "fish_species": [
+        "黄颡鱼",
+        "鲫鱼"
+      ],
+      "fee": 0,
+      "compliance": "'昂刺鱼资源比较丰富，水流不是很急'；偏僻无停车场，结伴出行",
+      "confidence": "community",
+      "lat": 30.972,
+      "lon": 121.212,
+      "sources": [
+        "https://www.sohu.com/a/245836888_650035"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-song-yexin-yuejinhe",
+      "name": "叶新公路×跃进河桥",
+      "district": "松江区",
+      "water_body": "跃进河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼"
+      ],
+      "fee": 0,
+      "compliance": "十字交汇水面、鲫鱼偏多；紧贴公路停车不便，注意安全",
+      "confidence": "community",
+      "lat": 30.945,
+      "lon": 121.215,
+      "sources": [
+        "https://www.sohu.com/a/245836888_650035"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-song-mishidu",
+      "name": "米市渡·建中路底水闸附近",
+      "district": "松江区",
+      "water_body": "黄浦江",
+      "type": "river",
+      "fish_species": [
+        "鲤鱼",
+        "鳊鱼",
+        "黄颡鱼"
+      ],
+      "fee": 0,
+      "compliance": "'水闸附近大鱼比较多'；位置偏僻难找；感潮江段按涨潮窗口作钓更好",
+      "confidence": "community",
+      "lat": 31.002,
+      "lon": 121.243,
+      "sources": [
+        "https://www.sohu.com/a/245836888_650035"
+      ],
+      "tidal": true
+    },
+    {
+      "id": "sh-song-shenjingtang",
+      "name": "沈泾塘（松江新城·晨岛花苑旁）",
+      "district": "松江区",
+      "water_body": "沈泾塘",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼"
+      ],
+      "fee": 0,
+      "compliance": "新城内景观河道，环境好；遵守滨水空间管理规定",
+      "confidence": "community",
+      "lat": 31.029,
+      "lon": 121.207,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/104443.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-song-dazhangjing",
+      "name": "大张泾（思贤路×龙兴港桥、思贤公园附近）",
+      "district": "松江区",
+      "water_body": "大张泾",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鳊鱼",
+        "马口"
+      ],
+      "fee": 0,
+      "compliance": "公园旁河道，可微物路亚马口；遵守公园管理规定",
+      "confidence": "community",
+      "lat": 31.047,
+      "lon": 121.206,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/104443.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-qp-dazhenggang",
+      "name": "大蒸港支流（永利路戚家港桥一带）",
+      "district": "青浦区",
+      "water_body": "大蒸港",
+      "type": "river",
+      "fish_species": [
+        "鲤鱼",
+        "鲫鱼",
+        "鲢鳙"
+      ],
+      "fee": 0,
+      "compliance": "有大物记录但易空军；避开淀山湖水源一级保护区岸线",
+      "confidence": "community",
+      "lat": 30.98,
+      "lon": 121.02,
+      "sources": [
+        "https://k.sina.cn/article_5980650186_164797aca001001abm.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-qp-xidayinggang",
+      "name": "西大盈港双桥",
+      "district": "青浦区",
+      "water_body": "西大盈港",
+      "type": "river",
+      "fish_species": [
+        "鲤鱼",
+        "鲫鱼"
+      ],
+      "fee": 0,
+      "compliance": "轻微走水；同上避开水源保护区",
+      "confidence": "community",
+      "lat": 31.15,
+      "lon": 121.09,
+      "sources": [
+        "https://k.sina.cn/article_5980650186_164797aca001001abm.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-qp-youdungang-baihe",
+      "name": "油墩港白鹤段（鹤顺路×油墩港桥北 300 米）",
+      "district": "青浦区",
+      "water_body": "油墩港",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼"
+      ],
+      "fee": 0,
+      "compliance": "免费江河型钓点，鲫为主；油墩港有船行波，注意安全",
+      "confidence": "community",
+      "lat": 31.236,
+      "lon": 121.128,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/124522.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-fn-punnan-yunhe",
+      "name": "浦南运河（奉贤新城段）",
+      "district": "奉贤区",
+      "water_body": "浦南运河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "鳊鱼"
+      ],
+      "fee": 0,
+      "compliance": "沿河多处可下竿，翻板老手将'随塘河、浦南运河'与金汇港并列为奉贤主力野钓线；具体钓位沿河自行选择",
+      "confidence": "community",
+      "lat": 30.913,
+      "lon": 121.466,
+      "sources": [
+        "http://www.turnfishing.com/aspbbs/dispbbs.asp?boardid=79&Id=27789"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-fn-suitanghe",
+      "name": "随塘河（沿海一线·海湾镇段）",
+      "district": "奉贤区",
+      "water_body": "随塘河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "黄颡鱼"
+      ],
+      "fee": 0,
+      "compliance": "感潮河道，宜涨潮窗口作钓；与金汇港闸口联动选择",
+      "confidence": "community",
+      "lat": 30.822,
+      "lon": 121.555,
+      "sources": [
+        "http://www.turnfishing.com/aspbbs/dispbbs.asp?boardid=79&Id=27789"
+      ],
+      "tidal": true
+    },
+    {
+      "id": "sh-cn-jinhuigang",
+      "name": "金汇港（南闸入海口段为最佳·金海公路 8 号近奉柘公路）",
+      "district": "奉贤区",
+      "water_body": "金汇港",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲈鱼",
+        "黄颡鱼",
+        "翘嘴"
+      ],
+      "fee": 0,
+      "compliance": "钓友原话'金汇港最佳钓点是往杭州湾的闸口段，每年钓鱼人很多'；水深 1-3 米；闸口注意安全与水利设施规定",
+      "confidence": "community",
+      "lat": 30.828,
+      "lon": 121.504,
+      "sources": [
+        "https://m.diaoyu.com/diaochang/shanghai/244127.html",
+        "https://www.zhihu.com/question/53293858"
+      ],
+      "tidal": true
+    },
+    {
+      "id": "sh-ks-jinshanzui",
+      "name": "金山嘴渔船码头（金山嘴渔村）",
+      "district": "金山区",
+      "water_body": "杭州湾北岸",
+      "type": "sea",
+      "fish_species": [
+        "海鲫",
+        "鲷类",
+        "黄鱼"
+      ],
+      "fee": 0,
+      "compliance": "海钓、滩钓点，夏末初秋最佳，需海竿重坠；渔村景区内遵守景区管理规定",
+      "confidence": "community",
+      "lat": 30.742,
+      "lon": 121.322,
+      "sources": [
+        "https://k.sina.cn/article_5980650186_164797aca001001abm.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-ks-longquan-caoqing",
+      "name": "龙泉港（漕泾镇阮家宅向北）",
+      "district": "金山区",
+      "water_body": "龙泉港",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲤鱼",
+        "白条"
+      ],
+      "fee": 0,
+      "compliance": "2017 年老帖待验证",
+      "confidence": "unverified",
+      "lat": 30.836,
+      "lon": 121.368,
+      "sources": [
+        "https://kknews.cc/zh-sg/news/3x3om93.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-cm-mingzhuhu",
+      "name": "西沙明珠湖景区欢乐渔场",
+      "district": "崇明区",
+      "water_body": "明珠湖",
+      "type": "paid",
+      "fish_species": [
+        "青鱼",
+        "草鱼",
+        "鲢鳙",
+        "鲤鱼"
+      ],
+      "fee": "100 元/杆/人（含渔获 3 斤，超出 38 元/斤）",
+      "compliance": "限一人一杆一钩、无倒刺钩、禁拟饵；公众号实名预约",
+      "confidence": "verified",
+      "lat": 31.69,
+      "lon": 121.26,
+      "sources": [
+        "https://m.sh.bendibao.com/mip/224254.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-cm-beihengyunhe",
+      "name": "北横运河",
+      "district": "崇明区",
+      "water_body": "北横运河",
+      "type": "river",
+      "fish_species": [
+        "鳊鱼",
+        "鲤鱼",
+        "鲫鱼",
+        "黄颡鱼"
+      ],
+      "fee": 0,
+      "compliance": "水深 3-4 米水流较急；避开崇明 4 处禁钓区（张网港、北堡港以西、长江大桥以东、北八滧港以东）",
+      "confidence": "community",
+      "lat": 31.73,
+      "lon": 121.55,
+      "sources": [
+        "https://sghexport.shobserver.com/html/toutiao/2023/02/28/971403.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-cm-changxing-sanweihe",
+      "name": "长兴岛三圩河（金淼路×丰富路口）",
+      "district": "崇明区",
+      "water_body": "三圩河",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鳊鱼"
+      ],
+      "fee": 0,
+      "compliance": "2017 年老帖待验证；崇明岛内'当地人随便找河就能钓'，但部分河道已承包养殖，下竿前看告示问本地人；⚠长江口及北湖属禁捕管理区禁钓",
+      "confidence": "unverified",
+      "lat": 31.393,
+      "lon": 121.662,
+      "sources": [
+        "https://bbs.bixishang.com/i/archiver/b/25/54975.html"
+      ],
+      "tidal": false
+    },
+    {
+      "id": "sh-bs-wusongpaotaiwan",
+      "name": "吴淞炮台湾湿地森林公园沿江岸线",
+      "district": "宝山区",
+      "water_body": "黄浦江口/长江口",
+      "type": "river",
+      "fish_species": [
+        "鲫鱼",
+        "鲈鱼"
+      ],
+      "fee": 0,
+      "compliance": "公园内管理规定待验证；临近长江口禁捕管理区，注意禁钓区边界",
+      "confidence": "unverified",
+      "lat": 31.39,
+      "lon": 121.5,
+      "sources": [
+        "https://zhuanlan.zhihu.com/p/615361559"
+      ],
+      "tidal": true
+    },
+    {
+      "id": "warning-dianshanhu",
+      "name": "⚠ 淀山湖本体（不推荐新手）",
+      "district": "青浦区",
+      "water_body": "淀山湖",
+      "type": "warning",
+      "fish_species": [],
+      "fee": 0,
+      "compliance": "昆山侧约 3 万亩常年禁钓（国家级水产种质资源保护区）；青浦侧金泽水库取水口周边、西岸 500 米、急水港北岸等属水源一级保护区禁钓（罚 200-500 元）。改钓周边大蒸港/西大盈港",
+      "confidence": "verified",
+      "lat": 31.09,
+      "lon": 121.02,
+      "sources": [
+        "https://www.ksrmtzx.com/news/detail/74887",
+        "https://www.shqp.gov.cn"
+      ],
+      "tidal": false
+    }
+  ]
+}
